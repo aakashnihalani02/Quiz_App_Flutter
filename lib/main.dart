@@ -10,6 +10,7 @@ class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.grey.shade900,
         body: SafeArea(
@@ -41,8 +42,7 @@ class _QuizPageState extends State<QuizPage> {
             .show();
         quizBrain.reset();
         scoreKeeper = [];
-      }
-      else {
+      } else {
         if (userPickedAnswer == correctAnswer) {
           scoreKeeper.add(Icon(
             Icons.check,
@@ -56,7 +56,8 @@ class _QuizPageState extends State<QuizPage> {
         }
 
         quizBrain.nextQuestion();
-      }});
+      }
+    });
   }
 
   @override
